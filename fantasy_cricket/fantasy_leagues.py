@@ -2,7 +2,8 @@
 This modules defines all the fantasy leagues that
 the project supports
 """
-from team import Teams
+from .team import Teams
+
 
 class Scorer:
     """
@@ -32,6 +33,7 @@ class Scorer:
         """
         type_map = {"ODI": self.odi, "T20": self.t20, "TEST": self.test}
         return sum(type_map[playing_format][key] * stats[key] for key in stats)
+
 
 class Dream11(Teams):
     """Dream11 League
